@@ -52,6 +52,22 @@ const team = [
     bio: "Visionary in digital innovation.",
     linkedin: "#",
     twitter: "#",
+  },
+  {
+    name: "Rico Fadli",
+    role: "Web Developer",
+    image: "/team/ahmad.jpg",
+    bio: "Visionary in digital innovation.",
+    linkedin: "#",
+    twitter: "#",
+  },
+  {
+    name: "Razziq Dhavino",
+    role: "Web Developer",
+    image: "/team/ahmad.jpg",
+    bio: "Visionary in digital innovation.",
+    linkedin: "#",
+    twitter: "#",
   }
 ]
 
