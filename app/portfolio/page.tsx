@@ -14,7 +14,7 @@ export default function PortfolioPage() {
     <main className="min-h-screen bg-background">
       <Navigation />
       <PortfolioHero />
-      <PortfolioCategories />
+      {/* <PortfolioCategories /> */}
       <PortfolioGrid />
       <Footer />
     </main>
