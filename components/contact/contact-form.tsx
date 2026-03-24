@@ -14,10 +14,10 @@ const services = [
 ]
 
 const budgets = [
-  "Under $5,000",
-  "$5,000 - $15,000",
-  "$15,000 - $30,000",
-  "$30,000+",
+  "Under Rp 5,000,000",
+  "Rp 5,000,000 - Rp 15,000,000",
+  "Rp 15,000,000 - Rp 30,000,000",
+  "Rp 30,000,000+",
 ]
 
 export function ContactForm() {

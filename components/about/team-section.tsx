@@ -1,17 +1,17 @@
 "use client"
 
 import Image from "next/image"
-import { Linkedin, Twitter } from "lucide-react"
+import { Linkedin, Globe } from "lucide-react"
 import Link from "next/link"
 
 const team = [
   {
     name: "Rivan Dio Perdinan",
     role: "Web Developer",
-    image: "/team/ahmad.jpg",
+    image: "/team/dio.png",
     bio: "Visionary in digital innovation.",
     linkedin: "#",
-    twitter: "#",
+    portfolio: "https://rivandio.kesug.com",
   },
   {
     name: "Farel Anugrah Al Fauzan",
@@ -19,7 +19,7 @@ const team = [
     image: "/team/ahmad.jpg",
     bio: "Visionary in digital innovation.",
     linkedin: "#",
-    twitter: "#",
+    portfolio: "#",
   },
   {
     name: "M Sakha Sandia",
@@ -27,7 +27,7 @@ const team = [
     image: "/team/ahmad.jpg",
     bio: "Visionary in digital innovation.",
     linkedin: "#",
-    twitter: "#",
+    portfolio: "#",
   },
   {
     name: "Rizky Aqil Hibatullah",
@@ -35,7 +35,7 @@ const team = [
     image: "/team/ahmad.jpg",
     bio: "Visionary in digital innovation.",
     linkedin: "#",
-    twitter: "#",
+    portfolio: "#",
   },
   {
     name: "Rahadrin M Hikaru Faqath S",
@@ -43,7 +43,7 @@ const team = [
     image: "/team/ahmad.jpg",
     bio: "Visionary in digital innovation.",
     linkedin: "#",
-    twitter: "#",
+    portfolio: "#",
   },
   {
     name: "M Taufiq Rahman Hakim",
@@ -51,7 +51,7 @@ const team = [
     image: "/team/ahmad.jpg",
     bio: "Visionary in digital innovation.",
     linkedin: "#",
-    twitter: "#",
+    portfolio: "#",
   },
   {
     name: "Rico Fadli",
@@ -59,7 +59,7 @@ const team = [
     image: "/team/ahmad.jpg",
     bio: "Visionary in digital innovation.",
     linkedin: "#",
-    twitter: "#",
+    portfolio: "#",
   },
   {
     name: "Razziq Dhavino",
@@ -67,7 +67,7 @@ const team = [
     image: "/team/ahmad.jpg",
     bio: "Visionary in digital innovation.",
     linkedin: "#",
-    twitter: "#",
+    portfolio: "#",
   }
 ]
 
@@ -97,14 +97,20 @@ export function TeamSection() {
             >
               {/* Image */}
               <div className="relative h-72 bg-secondary overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent z-10" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-24 h-24 rounded-full bg-primary/20 flex items-center justify-center">
+                {member.image ? (
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="flex items-center justify-center h-full">
                     <span className="text-3xl font-bold text-primary">
                       {member.name.charAt(0)}
                     </span>
                   </div>
-                </div>
+                )}
               </div>
 
               {/* Content */}
@@ -127,11 +133,11 @@ export function TeamSection() {
                     <Linkedin size={16} />
                   </Link>
                   <Link
-                    href={member.twitter}
+                    href={member.portfolio}
                     className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-                    aria-label={`${member.name}'s Twitter`}
+                    aria-label={`${member.name}'s Portfolio`}
                   >
-                    <Twitter size={16} />
+                    <Globe size={16} />
                   </Link>
                 </div>
               </div>

@@ -2,15 +2,18 @@
 
 import { ArrowUpRight } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 const projects = [
   {
     id: 1,
-    title: "TechFlow Dashboard",
-    category: "Web Development",
-    description: "A comprehensive analytics dashboard for a fintech startup.",
-    tags: ["Next.js", "React", "Tailwind CSS"],
+    title: "Sumber Nata Sarana",
+    category: "Company Website",
+    description: "Company profile website for Sumber Nata Sarana showcasing services, business information, and digital presence.",
+    tags: ["Website", "Company Profile", "Responsive"],
     color: "from-blue-500/20 to-cyan-500/20",
+    href: "https://sumbernatasarana.com",
+    image: "/portfolio/sumbernatasarana.png",
   },
   {
     id: 2,
@@ -19,6 +22,8 @@ const projects = [
     description: "Eco-friendly shopping app with carbon footprint tracking.",
     tags: ["React Native", "Node.js", "MongoDB"],
     color: "from-emerald-500/20 to-teal-500/20",
+    href: "#",
+    image: "/portfolio/sns.png",
   },
   {
     id: 3,
@@ -27,6 +32,8 @@ const projects = [
     description: "Complete brand overhaul for a luxury fashion retailer.",
     tags: ["Logo Design", "Brand Guidelines", "Print"],
     color: "from-amber-500/20 to-orange-500/20",
+    href: "#",
+    image: "/portfolio/sns.png",
   },
   {
     id: 4,
@@ -35,6 +42,8 @@ const projects = [
     description: "Healthcare platform redesign focusing on patient experience.",
     tags: ["Figma", "User Research", "Prototyping"],
     color: "from-rose-500/20 to-pink-500/20",
+    href: "#",
+    image: "/portfolio/sns.png",
   },
   {
     id: 5,
@@ -43,6 +52,8 @@ const projects = [
     description: "Food delivery app with real-time tracking and AI recommendations.",
     tags: ["Flutter", "Firebase", "Machine Learning"],
     color: "from-red-500/20 to-orange-500/20",
+    href: "#",
+    image: "/portfolio/sns.png",
   },
   {
     id: 6,
@@ -51,6 +62,8 @@ const projects = [
     description: "Enterprise file management and collaboration platform.",
     tags: ["Vue.js", "AWS", "PostgreSQL"],
     color: "from-indigo-500/20 to-purple-500/20",
+    href: "#",
+    image: "/portfolio/sns.png",
   },
   {
     id: 7,
@@ -59,6 +72,8 @@ const projects = [
     description: "Brand identity for an artisanal coffee roastery chain.",
     tags: ["Visual Identity", "Packaging", "Merchandise"],
     color: "from-yellow-500/20 to-amber-500/20",
+    href: "#",
+    image: "/portfolio/sns.png",
   },
   {
     id: 8,
@@ -67,6 +82,8 @@ const projects = [
     description: "E-learning platform with gamification and progress tracking.",
     tags: ["UX Research", "Design System", "Accessibility"],
     color: "from-sky-500/20 to-blue-500/20",
+    href: "#",
+    image: "/portfolio/sns.png",
   },
 ]
 
@@ -78,22 +95,27 @@ export function PortfolioGrid() {
           {projects.map((project, index) => (
             <Link
               key={project.id}
-              href="#"
+              href={project.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative rounded-2xl bg-card border border-border overflow-hidden transition-all duration-500 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1"
             >
               {/* Project Preview */}
-              <div className={`relative h-64 lg:h-80 bg-gradient-to-br ${project.color}`}>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-32 h-32 rounded-2xl bg-background/10 backdrop-blur-sm border border-white/10 flex items-center justify-center">
-                    <span className="text-4xl font-bold text-foreground/50">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-                </div>
+              <div className="relative h-64 lg:h-80 overflow-hidden">
+                {project.image ? (
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover group-hover:scale-110 group-hover:brightness-75 transition-all duration-500"
+                  />
+                ) : (
+                  <div className={`w-full h-full bg-gradient-to-br ${project.color}`} />
+                )}
 
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="flex items-center gap-2 text-foreground font-medium">
+                {/* Overlay hover */}
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span className="flex items-center gap-2 text-white font-medium">
                     View Project
                     <ArrowUpRight className="w-4 h-4" />
                   </span>
@@ -132,11 +154,11 @@ export function PortfolioGrid() {
         </div>
 
         {/* Load More */}
-        <div className="mt-16 text-center">
+        {/* <div className="mt-16 text-center">
           <button className="px-8 py-3 rounded-full bg-secondary text-foreground font-medium hover:bg-secondary/80 transition-colors">
             Load More Projects
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   )

@@ -5,19 +5,19 @@ const contactDetails = [
   {
     icon: Mail,
     label: "Email Us",
-    value: "hello@skyborne.id",
-    href: "mailto:hello@skyborne.id",
+    value: "skyborne.agency@gmail.com",
+    href: "mailto:skyborne.agency@gmail.com",
   },
   {
     icon: Phone,
     label: "Call Us",
-    value: "+62 812 3456 7890",
-    href: "tel:+6281234567890",
+    value: "+62 815 4718 2876",
+    href: "tel:+6281547182876",
   },
   {
     icon: MapPin,
     label: "Visit Us",
-    value: "Jl. Sudirman No. 123, Jakarta 12190",
+    value: "Bandung, Jawa Barat, Indonesia",
     href: "#",
   },
   {
@@ -29,7 +29,7 @@ const contactDetails = [
 ]
 
 const socialLinks = [
-  { label: "Instagram", href: "#" },
+  { label: "Instagram", href: "https://www.instagram.com/skyborne.agency/" },
   { label: "LinkedIn", href: "#" },
   { label: "Dribbble", href: "#" },
   { label: "Behance", href: "#" },
